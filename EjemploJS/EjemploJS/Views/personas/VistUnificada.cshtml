@@ -28,10 +28,13 @@
                 type: 'POST',
                 url: '@Url.Action("eliminarPersona")',
                 data: 'id=' + cedula,
-                success: function (data) {
-                    alert('Persona eliminada con éxito');
-                    var url = '@Url.Action("Index", "personas")';
-                    window.location.href = url;
+                success: function (result) {
+                    if (result.success)
+					{
+						alert('Persona eliminada con éxito');
+						var url = '@Url.Action("Index", "personas")';
+						window.location.href = url;
+					}       
                 },
             });
         }

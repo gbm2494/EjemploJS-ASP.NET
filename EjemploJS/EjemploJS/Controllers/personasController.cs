@@ -36,7 +36,7 @@ namespace EjemploJS.Controllers
             persona persona = db.persona.Find(id);
             db.persona.Remove(persona);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { success = true });
         }
 
         // Método post de la vista Unificada, se llama unicamente en el botón Guardar de la sección modificar
